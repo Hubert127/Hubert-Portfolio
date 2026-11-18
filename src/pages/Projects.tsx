@@ -16,16 +16,16 @@ export default function Projects() {
           <Reveal key={p.title} delay={(i % 3) * 100}>
             <a
               href={p.link}
-              className="group flex h-full flex-col rounded-2xl border border-white/10 bg-gradient-to-b from-panel-2 to-panel p-6 transition hover:-translate-y-1 hover:border-brand/60"
+              className="group flex h-full flex-col rounded-2xl border border-line bg-gradient-to-b from-panel-2 to-panel p-6 transition hover:-translate-y-1 hover:border-brand/60"
             >
               <div className="flex items-start justify-between">
-                <h3 className="font-serif text-2xl text-white">{p.title}</h3>
+                <h3 className="font-serif text-2xl text-fg">{p.title}</h3>
                 <LuArrowUpRight
                   size={20}
-                  className="text-slate-500 transition group-hover:text-sky"
+                  className="text-faint transition group-hover:text-sky"
                 />
               </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">{p.text}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{p.text}</p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
                   <li

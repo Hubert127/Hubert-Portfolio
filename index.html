@@ -8,7 +8,16 @@
       name="description"
       content="Portfolio of NiYo Hubert: software and AI systems engineering student, co-founder of JEHE TECH."
     />
-    <meta name="theme-color" content="#070d1f" />
+    <script>
+      // Set the theme before the page paints (no flash): saved choice, else device setting
+      try {
+        var saved = localStorage.getItem('theme')
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light')
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

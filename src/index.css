@@ -1,11 +1,59 @@
 @import "tailwindcss";
 
-@theme {
-  --color-ink: #070d1f;
-  --color-panel: #0c1630;
-  --color-panel-2: #111e40;
-  --color-brand: #2f6bff;
-  --color-sky: #7cc4ff;
+/* `dark:` utilities apply when <html data-theme="dark"> */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Light theme (default values) */
+:root {
+  --ink: #f4f7ff; /* page background */
+  --panel: #ffffff; /* cards */
+  --panel-2: #eef3ff; /* card gradient start */
+  --fg: #0b1530; /* headings */
+  --body: #334155; /* body text */
+  --muted: #475569; /* secondary text */
+  --faint: #5b6b82; /* tertiary text */
+  --line: rgba(11, 21, 48, 0.12); /* borders */
+  --tint: rgba(11, 21, 48, 0.04); /* subtle fills */
+  --tint-2: rgba(11, 21, 48, 0.08); /* hover fills */
+  --nav: #d6e4ff; /* navbar: soft blue, opaque so content never shows through */
+  --brand: #2f6bff;
+  --sky: #1d6fd6; /* accent text, darker for contrast on light */
+  color-scheme: light;
+}
+
+/* Dark theme (also available as a class, e.g. the footer stays navy in light mode) */
+:root[data-theme="dark"],
+.theme-dark {
+  --ink: #070d1f;
+  --panel: #0c1630;
+  --panel-2: #111e40;
+  --fg: #ffffff;
+  --body: #cbd5e1;
+  --muted: #94a3b8;
+  --faint: #64748b;
+  --line: rgba(255, 255, 255, 0.1);
+  --tint: rgba(255, 255, 255, 0.04);
+  --tint-2: rgba(255, 255, 255, 0.1);
+  --nav: #070d1f;
+  --sky: #7cc4ff;
+  color-scheme: dark;
+}
+
+/* Expose the variables as Tailwind colors (bg-ink, text-fg, border-line ...) */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-fg: var(--fg);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-tint: var(--tint);
+  --color-tint-2: var(--tint-2);
+  --color-nav: var(--nav);
+  --color-brand: var(--brand);
+  --color-sky: var(--sky);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
 }
@@ -16,10 +64,13 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-ink);
-  color: #cbd5e1;
+  background-color: var(--ink);
+  color: var(--body);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Scroll reveal: elements fade and rise into view */
@@ -43,5 +94,8 @@ body {
   }
   html {
     scroll-behavior: auto;
+  }
+  body {
+    transition: none;
   }
 }

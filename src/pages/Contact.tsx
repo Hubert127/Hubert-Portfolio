@@ -26,15 +26,15 @@ export default function Contact() {
                 <Icon size={20} />
               </span>
               <span>
-                <span className="block text-xs uppercase tracking-widest text-slate-500">
+                <span className="block text-xs uppercase tracking-widest text-faint">
                   {label}
                 </span>
-                <span className="text-white">{value}</span>
+                <span className="text-fg">{value}</span>
               </span>
             </>
           )
           const cls =
-            'flex items-center gap-4 rounded-2xl border border-white/10 bg-panel p-5 transition'
+            'flex items-center gap-4 rounded-2xl border border-line bg-panel p-5 transition'
           return (
             <Reveal key={label} delay={i * 100}>
               {href ? (
@@ -49,7 +49,7 @@ export default function Contact() {
         })}
 
         <Reveal delay={300} className="pt-6 text-center">
-          <p className="mb-4 text-sm text-slate-400">Or find me on</p>
+          <p className="mb-4 text-sm text-muted">Or find me on</p>
           <div className="flex justify-center">
             <SocialLinks />
           </div>

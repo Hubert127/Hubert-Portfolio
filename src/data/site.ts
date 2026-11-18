@@ -96,11 +96,57 @@ export const projects = [
   },
 ]
 
-export const gallery = [
-  { src: '/NiYo-Hubert.jpg', caption: 'NiYo Hubert' },
-  // Add more: { src: '/gallery/photo-2.jpg', caption: 'Caption' },
-  { src: '/Ubuzimaai.jpeg', caption: 'Ubuzima.ai', wide: true },
-  { src: '/Hubert_reward.jpeg', caption: 'NiYo Hubert' },
-  { src: '/certificate_hachathon.jpeg', caption: 'Certificate of Participation' },
-  { src: '/With_lectures.jpeg', caption: 'NiYo Hubert' },
+export type GalleryItem = {
+  src: string // file inside the public/ folder, e.g. '/Ubuzimaai.jpeg' (letters must match exactly)
+  title?: string // short heading shown in the post
+  caption?: string // the story or description of the moment
+  date?: string // when it took place, written as 'YYYY-MM-DD', e.g. '2026-03-12'
+  location?: string // where it took place
+  tags?: string[] // small labels, e.g. ['Hackathon', 'JEHE TECH']
+  wide?: boolean // true = landscape card that spans two columns in the grid
+}
+
+// Every field except `src` is optional: anything you leave empty is simply not shown.
+export const gallery: GalleryItem[] = [
+  {
+    src: '/NiYo-Hubert.jpg',
+    title: 'NiYo Hubert',
+    caption: '',
+    date: '',
+    location: '',
+    tags: [],
+  },
+  {
+    src: '/Ubuzimaai.jpeg',
+    title: 'Ubuzima.ai',
+    caption: '',
+    date: '',
+    location: '',
+    tags: [],
+    wide: true,
+  },
+  {
+    src: '/Hubert_reward.jpeg',
+    title: 'NiYo Hubert',
+    caption: '',
+    date: '',
+    location: '',
+    tags: [],
+  },
+  {
+    src: '/certificate_hachathon.jpeg',
+    title: 'Certificate of Participation',
+    caption: '',
+    date: '',
+    location: '',
+    tags: [],
+  },
+  {
+    src: '/With_lectures.jpeg',
+    title: 'NiYo Hubert',
+    caption: '',
+    date: '',
+    location: '',
+    tags: [],
+  },
 ]

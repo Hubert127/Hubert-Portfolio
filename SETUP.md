@@ -143,5 +143,4 @@ Hubert-Portfolio/
 
 ## Next steps
 
-- Decide on the sections (About, Projects, Skills, Contact) and the visual design.
-- Split the UI into components under `src/components/`.
+- To understand how the finished site works (pages, navigation, buttons, data flow, styling), read [HOW-IT-WORKS.md](HOW-IT-WORKS.md).

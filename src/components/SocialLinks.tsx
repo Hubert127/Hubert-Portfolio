@@ -18,7 +18,7 @@ export default function SocialLinks() {
             target="_blank"
             rel="noreferrer"
             aria-label={label}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-brand hover:bg-brand hover:text-white"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-tint text-body transition hover:border-brand hover:bg-brand hover:text-white"
           >
             <Icon size={17} />
           </a>

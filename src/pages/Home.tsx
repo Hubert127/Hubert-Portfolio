@@ -56,8 +56,8 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-12 pt-14 md:grid-cols-2 md:pt-20">
         <Reveal className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-10 rounded-full bg-brand/30 blur-3xl" aria-hidden />
-          <div className="relative aspect-[3/4] overflow-hidden rounded-[50%] border border-white/15 shadow-[0_0_80px_rgba(47,107,255,0.35)]">
+          <div className="absolute -inset-10 rounded-full bg-brand/15 blur-3xl dark:bg-brand/30" aria-hidden />
+          <div className="relative aspect-[3/4] overflow-hidden rounded-[50%] border border-line shadow-[0_0_80px_rgba(47,107,255,0.35)]">
             <img
               src={profile.photo}
               alt={`Portrait of ${profile.name}`}
@@ -68,22 +68,22 @@ export default function Home() {
         </Reveal>
 
         <Reveal delay={120} className="text-center md:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-slate-300">
+          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-tint px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-body">
             <span className="h-1.5 w-1.5 rounded-full bg-sky" />
             Available for projects
           </span>
 
-          <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-fg sm:text-6xl lg:text-7xl">
             Hi, I&apos;m <em className="text-brand">{profile.firstName}.</em>
           </h1>
 
-          <ul className="mt-6 space-y-1.5 text-sm uppercase tracking-[0.18em] text-slate-400">
+          <ul className="mt-6 space-y-1.5 text-sm uppercase tracking-[0.18em] text-muted">
             {profile.titleLines.map((line) => (
               <li key={line}>{line}</li>
             ))}
           </ul>
 
-          <p className="mx-auto mt-6 max-w-md text-slate-400 md:mx-0">{profile.pitch}</p>
+          <p className="mx-auto mt-6 max-w-md text-muted md:mx-0">{profile.pitch}</p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
             <Link
@@ -94,7 +94,7 @@ export default function Home() {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-tint px-6 py-3 text-sm font-semibold text-fg transition hover:bg-tint-2"
             >
               <LuMail size={16} /> Contact Me
             </Link>
@@ -105,14 +105,14 @@ export default function Home() {
       {/* Skills strip */}
       <section className="mx-auto max-w-6xl px-6 py-10">
         <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-faint">
             Tools I work with
           </p>
           <ul className="mt-5 flex flex-wrap justify-center gap-3">
             {skills.map((s) => (
               <li
                 key={s}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300"
+                className="rounded-full border border-line bg-tint px-4 py-2 text-sm text-body"
               >
                 {s}
               </li>
@@ -125,7 +125,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pt-16">
         <Reveal className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky">Explore</p>
-          <h2 className="mt-3 font-serif text-4xl text-white md:text-5xl">
+          <h2 className="mt-3 font-serif text-4xl text-fg md:text-5xl">
             Explore more about me
           </h2>
         </Reveal>
@@ -135,13 +135,13 @@ export default function Home() {
             <Reveal key={title} delay={(i % 3) * 100}>
               <Link
                 to={to}
-                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-gradient-to-b from-panel-2 to-panel p-6 transition hover:-translate-y-1 hover:border-brand/60"
+                className="group flex h-full flex-col rounded-2xl border border-line bg-gradient-to-b from-panel-2 to-panel p-6 transition hover:-translate-y-1 hover:border-brand/60"
               >
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 text-sky">
                   <Icon size={22} />
                 </span>
-                <h3 className="mt-5 font-serif text-2xl text-white">{title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{text}</p>
+                <h3 className="mt-5 font-serif text-2xl text-fg">{title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{text}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky">
                   Explore {title.toLowerCase()}
                   <LuArrowRight
